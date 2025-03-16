@@ -26,7 +26,7 @@ const mdServer = (dir, port) => {
       const styleSheet = `<style>${githubMarkdownLightCss}</style>`;
       const githubHref = `
         <p class="markdown-static-github">
-          <a href="https://github.com/Joey-Wong/markdown-static">markdown-static</a>
+          Powered by <a href="https://github.com/Joey-Wong/markdown-static">markdown-static</a>
         </p>
       `;
       const fullHtml = `
