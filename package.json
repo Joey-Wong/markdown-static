@@ -1,6 +1,6 @@
 {
   "name": "markdown-static",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "markdown-static",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,9 @@
     "markdown",
     "static",
     "markdown-serve",
-    "markdown-static"
+    "markdown-static",
+    "blog",
+    "markdown-blog"
   ],
   "dependencies": {
     "express": "4.18.2",
