@@ -24,6 +24,11 @@ const mdServer = (dir, port) => {
       const html = markdown.toHTML(data);
       const title = getTitle(html);
       const styleSheet = `<style>${githubMarkdownLightCss}</style>`;
+      const githubHref = `
+        <p class="markdown-static-github">
+          <a href="https://github.com/Joey-Wong/markdown-static">markdown-static</a>
+        </p>
+      `;
       const fullHtml = `
           <!DOCTYPE html>
           <html lang="en">
@@ -45,14 +50,16 @@ const mdServer = (dir, port) => {
                   padding: 15px;
                 }
               }
-              .author {
+              .markdown-static-github {
+                color: #333;
+                border-top: 1px solid #d1d9e0b3;
                 margin-top: 40px;
-                color: #999;
+                padding: 20px 0;
               }
             </style>
           </head>
           <body>
-            <article class="markdown-body">${html}</article>
+            <article class="markdown-body">${html}${githubHref}</article>
           </body>
           </html>
         `;
