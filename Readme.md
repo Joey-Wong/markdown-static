@@ -1,13 +1,14 @@
 # markdown-static
 
-## [DEMO](https://https://blog.yasol.cn)
+## [DEMO](https://blog.yasol.cn)
 
-## Install
+### Node.js
+#### Install
 ```Bash
 npm install markdown-static
 ```
 
-## Ready
+#### Ready
 * mkdir assets,markdown
 ```Bash
 /data
@@ -17,7 +18,7 @@ npm install markdown-static
     |-- test.md
 ```
 
-* `test.md`
+* `test.md` content
 ```markdown
 # test
 
@@ -29,8 +30,8 @@ npm install markdown-static
 ```
 
 
-## API
-```
+#### API
+```JavaScript
 const markdownStatic = require("markdown-static");
 markdownStatic({
   rootDir: "/data", // must
@@ -44,3 +45,25 @@ markdownStatic({
 * visit
 ![img](./1.png)
 ![img](./2.png)
+
+### Docker
+* docker-compose.yml
+```yml
+version: '3'
+services:
+  markdown-blog:
+    restart: always
+    image: dockerjoeyy/markdown-static:latest
+    container_name: markdown-static
+    ports:
+      - "3000:3000"
+    environment:
+      - LANG="en_US.UTF-8"
+    volumes:
+      - ./data:/data
+```
+
+* run
+```Bash
+docker-compose up -d
+```
