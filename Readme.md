@@ -51,7 +51,7 @@ markdownStatic({
 ```yml
 version: '3'
 services:
-  markdown-blog:
+  markdown-static:
     restart: always
     image: dockerjoeyy/markdown-static:latest
     container_name: markdown-static
@@ -60,7 +60,7 @@ services:
     environment:
       - LANG="en_US.UTF-8"
     volumes:
-      - ./data:/data
+      - /data:/data
 ```
 
 * run
