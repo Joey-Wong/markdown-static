@@ -70,4 +70,4 @@ docker-compose up -d
 
 ### Donate
 * buy me a coffee.
-![img](./donate.jpg)
+![img](./donate.png)
