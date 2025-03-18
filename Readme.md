@@ -43,8 +43,8 @@ markdownStatic({
 ```
 
 * visit
-![img](./1.png)
-![img](./2.png)
+![img](https://raw.githubusercontent.com/Joey-Wong/markdown-static/HEAD/1.png)
+![img](https://raw.githubusercontent.com/Joey-Wong/markdown-static/HEAD/2.png)
 
 ### [Docker](https://hub.docker.com/r/dockerjoeyy/markdown-static)
 * docker-compose.yml
@@ -70,4 +70,4 @@ docker-compose up -d
 
 ### Donate
 * buy me a coffee.
-![img](./donate.png)
+![img](https://raw.githubusercontent.com/Joey-Wong/markdown-static/HEAD/donate.png)
