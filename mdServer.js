@@ -1,7 +1,22 @@
 const express = require('express');
 const fs = require('fs');
-const markdown = require("markdown").markdown;
 const githubMarkdownLightCss = require('./githubMarkdownLightCss');
+const hljsTheme = require('./default.min.css.js');
+const markdownit = require("markdown-it");
+const hljs = require("highlight.js");
+
+const md = markdownit({
+  highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(str, { language: lang }).value;
+      } catch (__) {}
+    }
+
+    return ''; // use external default escaping
+  }
+});
+
 // 获取标题
 const getTitle = (str) => {
   const regex = /<h1>(.*?)<\/h1>/;
@@ -21,9 +36,10 @@ const mdServer = (dir, port) => {
         res.status(500).send('无法读取 Markdown 文件');
         return;
       }
-      const html = markdown.toHTML(data);
+      const html = md.render(data);
       const title = getTitle(html);
       const styleSheet = `<style>${githubMarkdownLightCss}</style>`;
+      const hljsThemeStyleSheet = `<style>${hljsTheme}</style>`;
       const githubHref = `
         <p class="markdown-static-github">
           Powered by <a href="https://github.com/Joey-Wong/markdown-static">markdown-static</a>
@@ -37,6 +53,7 @@ const mdServer = (dir, port) => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${title || ''}</title>
             ${styleSheet}
+            ${hljsThemeStyleSheet}
             <style>
               .markdown-body {
                 box-sizing: border-box;

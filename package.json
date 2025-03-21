@@ -1,6 +1,6 @@
 {
   "name": "markdown-static",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "markdown-static",
   "main": "index.js",
   "scripts": {
@@ -20,8 +20,9 @@
   ],
   "dependencies": {
     "express": "4.18.2",
+    "highlight.js": "^11.11.1",
     "http-proxy-middleware": "2.0.6",
-    "markdown": "0.5.0"
+    "markdown-it": "14.1.0"
   },
   "author": "Joey-Wong <511212586@qq.com>",
   "license": "MIT",
