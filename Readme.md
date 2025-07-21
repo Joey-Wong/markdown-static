@@ -1,6 +1,6 @@
 # markdown-static
 
-## [DEMO](https://blog.yasol.cn)
+## [DEMO](https://blog.yasol.cc)
 
 ### Node.js
 #### Install
